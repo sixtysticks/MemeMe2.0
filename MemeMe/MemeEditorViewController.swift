@@ -46,14 +46,13 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     @IBOutlet weak var movableView: UIView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var toolBar: UIToolbar!
-    @IBOutlet weak var bottomTextConstraint: NSLayoutConstraint!
     
     // IBActions
     
     @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
         let shareText = "Check out this cool meme I made 😎"
         let memedImage = generateMemedImage()
-        let activityViewController = UIActivityViewController.init(activityItems: [memedImage], applicationActivities: nil)
+        let activityViewController = UIActivityViewController.init(activityItems: [shareText, memedImage], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
     }
     
@@ -91,7 +90,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         view.backgroundColor = UIColor.white
         self.view.addSubview(view)
         
-        // Set initial appearance of textfields
+        // Set intitial appearance of textfields
         
         topTextField.delegate = self
         topTextField.text = topText
@@ -104,7 +103,6 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         bottomTextField.textAlignment = .center
         
         // Disable the share button initially
-        
         shareButton.isEnabled = false
     }
     
@@ -125,7 +123,6 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         if textField.text == topText || textField.text == bottomText || textField.text == addText {
             textField.text = ""
         }
-        print("NOW: \(bottomTextField.frame.origin.y)")
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -184,7 +181,8 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         return keyboardSize.cgRectValue.height
     }
     
-    // Save the meme
+    // Save and generate the meme
+    
     func saveMeme() -> Meme {
         let savedMeme = Meme(topString: topTextField.text!, bottomString: bottomTextField.text!, originalImage: imageView.image!, memeImage: generateMemedImage())
         return savedMeme

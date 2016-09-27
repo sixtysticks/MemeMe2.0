@@ -131,7 +131,6 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
-                        <outlet property="bottomTextConstraint" destination="vWm-3X-T70" id="VYG-pn-pf5"/>
                         <outlet property="bottomTextField" destination="OgU-Pb-sPP" id="jIU-te-WDD"/>
                         <outlet property="imageView" destination="IVg-NB-8j0" id="l2A-gj-dpx"/>
                         <outlet property="movableView" destination="cEV-GD-Oti" id="ng1-mC-sgX"/>
