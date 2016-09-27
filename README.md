@@ -2,4 +2,4 @@
 
 #### Udacity iOS Developer Nanodegree: Project 2
 ***
-![alt text](http://i.imgur.com/tMTXgKQ.gif "MemeMe")
+<a href="http://i.imgur.com/tMTXgKQ.gif" target="_blank">Animated gif of the app in action</a>
