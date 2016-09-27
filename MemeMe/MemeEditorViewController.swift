@@ -13,6 +13,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     // Variables
     
     var keyboardIsShowing = false
+    var savedMemes = [Meme]()
 
     // Constants
     
@@ -53,7 +54,9 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         let shareText = "Check out this cool meme I made 😎"
         let memedImage = generateMemedImage()
         let activityViewController = UIActivityViewController.init(activityItems: [shareText, memedImage], applicationActivities: nil)
-        present(activityViewController, animated: true, completion: nil)
+        present(activityViewController, animated: true) {
+            self.savedMemes.append(self.saveMeme())
+        }
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
