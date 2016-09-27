@@ -90,7 +90,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         view.backgroundColor = UIColor.white
         self.view.addSubview(view)
         
-        // Set intitial appearance of textfields
+        // Set initial appearance of textfields
         
         topTextField.delegate = self
         topTextField.text = topText
