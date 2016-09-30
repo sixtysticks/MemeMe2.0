@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,10 +20,25 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEV-GD-Oti">
                                 <subviews>
-                                    <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IVg-NB-8j0">
+                                    <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IVg-NB-8j0">
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgU-Pb-sPP">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WVB-X0-TJQ">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="eW5-i5-oPD"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="TOP">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="28" name="Impact"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgU-Pb-sPP">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Qc5-mk-R5L"/>
                                         </constraints>
@@ -42,13 +56,16 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="IVg-NB-8j0" firstAttribute="leading" secondItem="cEV-GD-Oti" secondAttribute="leading" id="47T-bR-R3f"/>
-                                    <constraint firstItem="IVg-NB-8j0" firstAttribute="top" secondItem="cEV-GD-Oti" secondAttribute="topMargin" constant="-16" id="Ee1-lV-Xk1"/>
-                                    <constraint firstAttribute="trailing" secondItem="IVg-NB-8j0" secondAttribute="trailing" id="aZz-eo-Gvu"/>
-                                    <constraint firstItem="OgU-Pb-sPP" firstAttribute="leading" secondItem="cEV-GD-Oti" secondAttribute="leading" constant="6" id="hxA-ol-8Xy"/>
-                                    <constraint firstAttribute="bottom" secondItem="IVg-NB-8j0" secondAttribute="bottom" id="k1E-Kg-GQC"/>
-                                    <constraint firstAttribute="bottom" secondItem="OgU-Pb-sPP" secondAttribute="bottom" constant="16" id="vWm-3X-T70"/>
-                                    <constraint firstItem="OgU-Pb-sPP" firstAttribute="centerX" secondItem="IVg-NB-8j0" secondAttribute="centerX" id="wbe-gu-zi4"/>
+                                    <constraint firstItem="IVg-NB-8j0" firstAttribute="top" secondItem="cEV-GD-Oti" secondAttribute="top" constant="-8" id="0F4-Yf-a66"/>
+                                    <constraint firstItem="IVg-NB-8j0" firstAttribute="leading" secondItem="WVB-X0-TJQ" secondAttribute="leading" id="5Vn-PI-zQa"/>
+                                    <constraint firstItem="WVB-X0-TJQ" firstAttribute="top" secondItem="cEV-GD-Oti" secondAttribute="top" constant="6" id="C2v-wV-6v1"/>
+                                    <constraint firstAttribute="trailing" secondItem="WVB-X0-TJQ" secondAttribute="trailing" id="CF9-ga-MDm"/>
+                                    <constraint firstAttribute="bottom" secondItem="IVg-NB-8j0" secondAttribute="bottom" id="Fy8-NK-WD8"/>
+                                    <constraint firstItem="OgU-Pb-sPP" firstAttribute="leading" secondItem="cEV-GD-Oti" secondAttribute="leading" id="Nzt-LV-PN9"/>
+                                    <constraint firstAttribute="bottom" secondItem="OgU-Pb-sPP" secondAttribute="bottom" constant="6" id="P2T-EP-vux"/>
+                                    <constraint firstItem="WVB-X0-TJQ" firstAttribute="leading" secondItem="cEV-GD-Oti" secondAttribute="leading" id="QLO-5C-0eg"/>
+                                    <constraint firstItem="IVg-NB-8j0" firstAttribute="centerX" secondItem="cEV-GD-Oti" secondAttribute="centerX" id="cqa-N3-ZE2"/>
+                                    <constraint firstAttribute="trailing" secondItem="OgU-Pb-sPP" secondAttribute="trailing" id="qkb-3o-uoW"/>
                                 </constraints>
                             </view>
                             <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sx7-na-SZs">
@@ -70,21 +87,6 @@
                                 </items>
                                 <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WVB-X0-TJQ">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="eW5-i5-oPD"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="TOP">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="28" name="Impact"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                            </textField>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEB-f4-sr1">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -111,22 +113,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="cEV-GD-Oti" secondAttribute="trailing" id="02E-H8-pTZ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sx7-na-SZs" secondAttribute="bottom" id="6ff-1f-OFZ"/>
-                            <constraint firstItem="YEB-f4-sr1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6i6-ou-GDf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="sx7-na-SZs" secondAttribute="trailing" constant="-20" id="7TA-X4-ytn"/>
-                            <constraint firstItem="WVB-X0-TJQ" firstAttribute="top" secondItem="YEB-f4-sr1" secondAttribute="bottom" constant="16" id="BM9-6a-KDK"/>
-                            <constraint firstItem="cEV-GD-Oti" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="ChD-Z2-xFi"/>
-                            <constraint firstItem="sx7-na-SZs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="FLg-uN-Nqh"/>
-                            <constraint firstItem="cEV-GD-Oti" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Grz-3i-TUh"/>
-                            <constraint firstItem="cEV-GD-Oti" firstAttribute="top" secondItem="YEB-f4-sr1" secondAttribute="bottom" id="INc-5i-iB3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YEB-f4-sr1" secondAttribute="trailing" constant="-20" id="KI9-vg-a8B"/>
-                            <constraint firstItem="cEV-GD-Oti" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="M58-2S-GTb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WVB-X0-TJQ" secondAttribute="trailing" constant="-10" id="PTH-6h-BJ9"/>
-                            <constraint firstItem="WVB-X0-TJQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="hqn-MU-ab3"/>
-                            <constraint firstAttribute="trailing" secondItem="cEV-GD-Oti" secondAttribute="trailing" id="ig1-GR-T20"/>
-                            <constraint firstItem="YEB-f4-sr1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="wqV-HH-fDk"/>
-                            <constraint firstAttribute="bottom" secondItem="cEV-GD-Oti" secondAttribute="bottom" constant="40" id="yEH-g6-pxu"/>
+                            <constraint firstItem="YEB-f4-sr1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0cx-nQ-cIg"/>
+                            <constraint firstAttribute="trailing" secondItem="sx7-na-SZs" secondAttribute="trailing" id="GqD-et-2Rf"/>
+                            <constraint firstItem="cEV-GD-Oti" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QHj-d3-GJM"/>
+                            <constraint firstAttribute="trailing" secondItem="cEV-GD-Oti" secondAttribute="trailing" id="QXV-eE-dGe"/>
+                            <constraint firstItem="cEV-GD-Oti" firstAttribute="top" secondItem="YEB-f4-sr1" secondAttribute="bottom" id="SHD-1k-zU8"/>
+                            <constraint firstItem="YEB-f4-sr1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="XeB-0M-bGe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sx7-na-SZs" secondAttribute="bottom" id="YQ2-va-qYg"/>
+                            <constraint firstAttribute="trailing" secondItem="YEB-f4-sr1" secondAttribute="trailing" id="apx-kP-RZo"/>
+                            <constraint firstItem="sx7-na-SZs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iOh-du-JHR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cEV-GD-Oti" secondAttribute="bottom" constant="40" id="kWA-yS-Btn"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>

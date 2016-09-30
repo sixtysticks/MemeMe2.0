@@ -69,15 +69,16 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     }
     
     @IBAction func takePhotoButtonPressed(_ sender: UIBarButtonItem) {
-        let pickerController =  UIImagePickerController()
-        pickerController.sourceType = .camera
-        pickerController.delegate = self
-        self.present(pickerController, animated: true, completion: nil)
+        presentImagePicker(.camera)
     }
     
     @IBAction func cameraRollButtonPressed(_ sender: UIBarButtonItem) {
+        presentImagePicker(.photoLibrary)
+    }
+    
+    func presentImagePicker(_ sourceType: UIImagePickerControllerSourceType) {
         let pickerController =  UIImagePickerController()
-        pickerController.sourceType = .photoLibrary
+        pickerController.sourceType = sourceType
         pickerController.delegate = self
         self.present(pickerController, animated: true, completion: nil)
     }
