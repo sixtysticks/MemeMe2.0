@@ -18,75 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEV-GD-Oti">
-                                <subviews>
-                                    <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IVg-NB-8j0">
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WVB-X0-TJQ">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="eW5-i5-oPD"/>
-                                        </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="TOP">
-                                                <attributes>
-                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <font key="NSFont" size="28" name="Impact"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgU-Pb-sPP">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="Qc5-mk-R5L"/>
-                                        </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="BOTTOM">
-                                                <attributes>
-                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <font key="NSFont" size="28" name="Impact"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="IVg-NB-8j0" firstAttribute="top" secondItem="cEV-GD-Oti" secondAttribute="top" constant="-8" id="0F4-Yf-a66"/>
-                                    <constraint firstItem="IVg-NB-8j0" firstAttribute="leading" secondItem="WVB-X0-TJQ" secondAttribute="leading" id="5Vn-PI-zQa"/>
-                                    <constraint firstItem="WVB-X0-TJQ" firstAttribute="top" secondItem="cEV-GD-Oti" secondAttribute="top" constant="6" id="C2v-wV-6v1"/>
-                                    <constraint firstAttribute="trailing" secondItem="WVB-X0-TJQ" secondAttribute="trailing" id="CF9-ga-MDm"/>
-                                    <constraint firstAttribute="bottom" secondItem="IVg-NB-8j0" secondAttribute="bottom" id="Fy8-NK-WD8"/>
-                                    <constraint firstItem="OgU-Pb-sPP" firstAttribute="leading" secondItem="cEV-GD-Oti" secondAttribute="leading" id="Nzt-LV-PN9"/>
-                                    <constraint firstAttribute="bottom" secondItem="OgU-Pb-sPP" secondAttribute="bottom" constant="6" id="P2T-EP-vux"/>
-                                    <constraint firstItem="WVB-X0-TJQ" firstAttribute="leading" secondItem="cEV-GD-Oti" secondAttribute="leading" id="QLO-5C-0eg"/>
-                                    <constraint firstItem="IVg-NB-8j0" firstAttribute="centerX" secondItem="cEV-GD-Oti" secondAttribute="centerX" id="cqa-N3-ZE2"/>
-                                    <constraint firstAttribute="trailing" secondItem="OgU-Pb-sPP" secondAttribute="trailing" id="qkb-3o-uoW"/>
-                                </constraints>
-                            </view>
-                            <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sx7-na-SZs">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <items>
-                                    <barButtonItem systemItem="camera" id="O9s-Ys-Gmd">
-                                        <color key="tintColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="takePhotoButtonPressed:" destination="BYZ-38-t0r" id="sBq-Ix-MZr"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="lnF-F1-hrV"/>
-                                    <barButtonItem title="Camera Roll" id="rYD-5Q-gcE">
-                                        <color key="tintColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="cameraRollButtonPressed:" destination="BYZ-38-t0r" id="vLU-Rt-tid"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IVg-NB-8j0"/>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEB-f4-sr1">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -110,31 +42,88 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sx7-na-SZs">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="O9s-Ys-Gmd">
+                                        <color key="tintColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="takePhotoButtonPressed:" destination="BYZ-38-t0r" id="sBq-Ix-MZr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="lnF-F1-hrV"/>
+                                    <barButtonItem title="Camera Roll" id="rYD-5Q-gcE">
+                                        <color key="tintColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="cameraRollButtonPressed:" destination="BYZ-38-t0r" id="vLU-Rt-tid"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgU-Pb-sPP">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Qc5-mk-R5L"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="BOTTOM">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="28" name="Impact"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WVB-X0-TJQ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="eW5-i5-oPD"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="TOP">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="28" name="Impact"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YEB-f4-sr1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0cx-nQ-cIg"/>
-                            <constraint firstAttribute="trailing" secondItem="sx7-na-SZs" secondAttribute="trailing" id="GqD-et-2Rf"/>
-                            <constraint firstItem="cEV-GD-Oti" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QHj-d3-GJM"/>
-                            <constraint firstAttribute="trailing" secondItem="cEV-GD-Oti" secondAttribute="trailing" id="QXV-eE-dGe"/>
-                            <constraint firstItem="cEV-GD-Oti" firstAttribute="top" secondItem="YEB-f4-sr1" secondAttribute="bottom" id="SHD-1k-zU8"/>
-                            <constraint firstItem="YEB-f4-sr1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="XeB-0M-bGe"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sx7-na-SZs" secondAttribute="bottom" id="YQ2-va-qYg"/>
-                            <constraint firstAttribute="trailing" secondItem="YEB-f4-sr1" secondAttribute="trailing" id="apx-kP-RZo"/>
-                            <constraint firstItem="sx7-na-SZs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iOh-du-JHR"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cEV-GD-Oti" secondAttribute="bottom" constant="40" id="kWA-yS-Btn"/>
+                            <constraint firstItem="YEB-f4-sr1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="24H-BC-pZr"/>
+                            <constraint firstAttribute="trailing" secondItem="WVB-X0-TJQ" secondAttribute="trailing" id="5YQ-8y-K5j"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IVg-NB-8j0" secondAttribute="bottom" constant="40" id="Ahe-a3-ugl"/>
+                            <constraint firstAttribute="trailing" secondItem="IVg-NB-8j0" secondAttribute="trailing" id="LxB-42-XqK"/>
+                            <constraint firstItem="WVB-X0-TJQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QMT-Rh-sTj"/>
+                            <constraint firstItem="sx7-na-SZs" firstAttribute="top" secondItem="OgU-Pb-sPP" secondAttribute="bottom" constant="16" id="TpT-YH-KV5"/>
+                            <constraint firstAttribute="trailing" secondItem="YEB-f4-sr1" secondAttribute="trailing" id="Uyo-BJ-7Iy"/>
+                            <constraint firstItem="WVB-X0-TJQ" firstAttribute="top" secondItem="IVg-NB-8j0" secondAttribute="top" constant="16" id="WUV-gb-8Ow"/>
+                            <constraint firstItem="IVg-NB-8j0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WUl-VE-TW3"/>
+                            <constraint firstItem="OgU-Pb-sPP" firstAttribute="trailing" secondItem="sx7-na-SZs" secondAttribute="trailing" id="X0W-ZN-tWB"/>
+                            <constraint firstItem="sx7-na-SZs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dBu-xK-Mvp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sx7-na-SZs" secondAttribute="bottom" id="hY3-FN-qh6"/>
+                            <constraint firstAttribute="trailing" secondItem="sx7-na-SZs" secondAttribute="trailing" id="j6e-gA-dFp"/>
+                            <constraint firstItem="OgU-Pb-sPP" firstAttribute="leading" secondItem="sx7-na-SZs" secondAttribute="leading" id="jaj-4i-1Xy"/>
+                            <constraint firstItem="YEB-f4-sr1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jjx-99-iLT"/>
+                            <constraint firstItem="IVg-NB-8j0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="vza-Nh-Ipj"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="bottomTextField" destination="OgU-Pb-sPP" id="jIU-te-WDD"/>
+                        <outlet property="bottomTextFieldConstraintBottom" destination="TpT-YH-KV5" id="E9p-WL-UDU"/>
                         <outlet property="imageView" destination="IVg-NB-8j0" id="l2A-gj-dpx"/>
-                        <outlet property="movableView" destination="cEV-GD-Oti" id="ng1-mC-sgX"/>
                         <outlet property="navigationBar" destination="YEB-f4-sr1" id="cAu-ZD-NN0"/>
                         <outlet property="shareButton" destination="kxG-EB-DRV" id="iMT-QH-n6g"/>
                         <outlet property="takePhotoButton" destination="O9s-Ys-Gmd" id="aNH-Yr-4XZ"/>
                         <outlet property="toolBar" destination="sx7-na-SZs" id="yQb-ba-5D6"/>
                         <outlet property="topTextField" destination="WVB-X0-TJQ" id="rmR-Ez-kOp"/>
+                        <outlet property="topTextfieldConstraintTop" destination="WUV-gb-8Ow" id="3Nl-fy-80y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

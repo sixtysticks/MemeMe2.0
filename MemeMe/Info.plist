@@ -22,10 +22,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This will allow you to access photos from your camera roll to use in a meme</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This will allow you to take your own photos on the fly</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This will allow you to access photos from your camera roll to use in a meme</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>impact.ttf</string>
@@ -39,7 +39,7 @@
 		<string>armv7</string>
 	</array>
 	<key>UIStatusBarHidden</key>
-	<false/>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -53,5 +53,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>
