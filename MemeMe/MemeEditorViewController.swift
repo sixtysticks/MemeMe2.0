@@ -12,7 +12,6 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     // MARK: Variables
     
-    var savedMemes = [Meme]()
     var currentImagePicked = CGRect()
 
     // MARK: Constants
@@ -29,15 +28,6 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         NSFontAttributeName: UIFont(name: "Impact", size: 50)!,
         NSStrokeWidthAttributeName: -4.0
     ] as [String : Any]
-    
-    // MARK: Structs
-    
-    struct Meme {
-        let topString: String?
-        let bottomString: String?
-        let originalImage: UIImage?
-        let memeImage: UIImage?
-    }
     
     // MARK: IBOutlets
     
@@ -64,7 +54,8 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         // Save the meme on completion of share
         activityViewController.completionWithItemsHandler = { activity, success, items, error in
             if(success){
-                self.savedMemes.append(self.saveMeme())
+                self.saveMeme()
+                self.dismiss(animated: true, completion: nil)
             }
         }
         present(activityViewController, animated: true, completion: nil)
@@ -72,14 +63,16 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         
-        // Set UI elements back to default
-        topTextField.text = topText
-        bottomTextField.text = bottomText
-        topTextField.resignFirstResponder()
-        bottomTextField.resignFirstResponder()
-        imageView.image = nil
-        shareButton.isEnabled = false
-        updateTextFieldConstraints(topConstantDefault, bottomConstant: bottomConstantDefault)
+//        // Set UI elements back to default
+//        topTextField.text = topText
+//        bottomTextField.text = bottomText
+//        topTextField.resignFirstResponder()
+//        bottomTextField.resignFirstResponder()
+//        imageView.image = nil
+//        shareButton.isEnabled = false
+//        updateTextFieldConstraints(topConstantDefault, bottomConstant: bottomConstantDefault)
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func takePhotoButtonPressed(_ sender: UIBarButtonItem) {
@@ -251,27 +244,37 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         NSLayoutConstraint.activate([topTextfieldConstraintTop, bottomTextFieldConstraintBottom])
     }
     
-    func saveMeme() -> Meme {
-        let savedMeme = Meme(topString: topTextField.text!, bottomString: bottomTextField.text!, originalImage: imageView.image!, memeImage: generateMemedImage())
-        return savedMeme
+    func saveMeme() {
+        let meme = Meme(topString: topTextField.text!,
+                 bottomString: bottomTextField.text!,
+                 originalImage: imageView.image!,
+                 memeImage: generateMemedImage())
+        
+        // Add it to the memes array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage {
-        navigationBar.isHidden = true
-        toolBar.isHidden = true
+        configureBars(barsHidden: true)
         
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        navigationBar.isHidden = false
-        toolBar.isHidden = false
+        configureBars(barsHidden: false)
         
         let crop = CGRect(x: currentImagePicked.origin.x, y: currentImagePicked.origin.y, width: currentImagePicked.width, height: currentImagePicked.height)
         let croppedImage = memedImage.cgImage!.cropping(to: crop)
         
         return UIImage(cgImage: croppedImage!)
+    }
+    
+    func configureBars(barsHidden: Bool) {
+        navigationBar.isHidden = barsHidden
+        toolBar.isHidden = barsHidden
     }
 }
 
