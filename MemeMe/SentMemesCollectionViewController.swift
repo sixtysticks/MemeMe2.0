@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import Foundation
 
 class SentMemesCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    // MARK: Constants
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    // MARK: IBOutlets
+    
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var memeCollectionView: UICollectionView!
-
+    
+    // MARK: ViewController methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
@@ -23,19 +31,35 @@ class SentMemesCollectionViewController: UIViewController, UICollectionViewDeleg
         memeCollectionView.reloadData()
     }
     
+    override func viewWillLayoutSubviews() {
+
+        // Implement flowLayout for consistent collection view layout
+        
+        let space: CGFloat = 3.0
+        var dimension = CGFloat()
+        
+        if (UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
+            dimension = (self.view.frame.size.width - (2 * space)) / 3.0
+        } else {
+            dimension = (self.view.frame.size.width - (4 * space)) / 5.0
+        }
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+    
+    // MARK: UICollectionViewDelegate methods
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return appDelegate.memes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomMemeCell", for: indexPath) as! CustomMemeCell
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomMemeCollectionCell", for: indexPath) as! CustomMemeCollectionCell
         let meme = appDelegate.memes[indexPath.row]
-        
-        cell.memeLabel.text = meme.topString
+        cell.setUpImage()
         cell.imageView.image = meme.originalImage
-        cell.backgroundColor = UIColor.darkGray
-        
         return cell
     }
     

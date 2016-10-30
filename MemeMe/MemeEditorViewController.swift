@@ -62,16 +62,6 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
-        
-//        // Set UI elements back to default
-//        topTextField.text = topText
-//        bottomTextField.text = bottomText
-//        topTextField.resignFirstResponder()
-//        bottomTextField.resignFirstResponder()
-//        imageView.image = nil
-//        shareButton.isEnabled = false
-//        updateTextFieldConstraints(topConstantDefault, bottomConstant: bottomConstantDefault)
-        
         self.dismiss(animated: true, completion: nil)
     }
     
